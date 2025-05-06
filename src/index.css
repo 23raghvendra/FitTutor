@@ -1,0 +1,38 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #007bff;
+  --accent-color-dark: #0056b3;
+  --accent-color-rgb: 0, 123, 255;
+  --border-color: #e0e0e0;
+  --text-secondary: #666666;
+  --card-bg: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #4dabf7;
+  --accent-color-dark: #339af0;
+  --accent-color-rgb: 77, 171, 247;
+  --border-color: #404040;
+  --text-secondary: #cccccc;
+  --card-bg: #2a2a2a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.app-container {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
