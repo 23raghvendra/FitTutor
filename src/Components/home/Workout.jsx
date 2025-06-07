@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import './Workout.css';
+import workoutImage3 from '../../assets/3.jpg';
+import cardioImage from '../../assets/h&c.jpeg';
+import legsImage from '../../assets/L&c.jpg';
+import shouldersImage from '../../assets/s&a.jpg';
+import hiitImage from '../../assets/full.jpeg';
+import yogaImage from '../../assets/y&f.jpeg';
+import recoveryImage from '../../assets/rest.jpeg';
 
 const workoutData = [
   {
     day: 'Monday',
-    focus: 'Chest & Triceps',
-    exercises: ['Bench Press', 'Push-ups', 'Tricep Dips', 'Cable Flyes'],
+    focus: 'Strength Training',
+    exercises: ['Dumbbell Press', 'Shoulder Press', 'Bicep Curls', 'Tricep Extensions'],
     duration: '45 min',
     color: '#4A90E2',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: workoutImage3,
+    bgColor: 'rgba(74, 144, 226, 0.9)'
   },
   {
     day: 'Tuesday',
-    focus: 'Back & Biceps',
-    exercises: ['Pull-ups', 'Rows', 'Curls', 'Face Pulls'],
-    duration: '50 min',
+    focus: 'HIIT & Cardio',
+    exercises: ['Battle Ropes', 'Box Jumps', 'Burpees', 'Mountain Climbers'],
+    duration: '40 min',
     color: '#6BFF6B',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: cardioImage,
+    bgColor: 'rgba(107, 255, 107, 0.9)'
   },
   {
     day: 'Wednesday',
@@ -24,7 +33,8 @@ const workoutData = [
     exercises: ['Squats', 'Deadlifts', 'Lunges', 'Planks'],
     duration: '55 min',
     color: '#6B6BFF',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: legsImage,
+    bgColor: 'rgba(107, 107, 255, 0.9)'
   },
   {
     day: 'Thursday',
@@ -32,7 +42,8 @@ const workoutData = [
     exercises: ['Military Press', 'Lateral Raises', 'Curls', 'Pushdowns'],
     duration: '45 min',
     color: '#FFFF6B',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: shouldersImage,
+    bgColor: 'rgba(255, 255, 107, 0.9)'
   },
   {
     day: 'Friday',
@@ -40,7 +51,8 @@ const workoutData = [
     exercises: ['Burpees', 'Mountain Climbers', 'Jump Rope', 'Box Jumps'],
     duration: '40 min',
     color: '#FF6BBF',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: hiitImage, 
+    bgColor: 'rgba(255, 107, 191, 0.9)'
   },
   {
     day: 'Saturday',
@@ -48,7 +60,8 @@ const workoutData = [
     exercises: ['Sun Salutation', 'Warrior Poses', 'Stretching', 'Meditation'],
     duration: '30 min',
     color: '#6BFFFA',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: yogaImage,
+    bgColor: 'rgba(107, 255, 250, 0.9)'
   },
   {
     day: 'Sunday',
@@ -56,7 +69,8 @@ const workoutData = [
     exercises: ['Light Walking', 'Swimming', 'Stretching', 'Foam Rolling'],
     duration: '30 min',
     color: '#FF6B6B',
-    bgImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'
+    image: recoveryImage,
+    bgColor: 'rgba(255, 107, 107, 0.9)'
   }
 ];
 
@@ -66,8 +80,8 @@ const Workout = () => {
   return (
     <section className="workout-section" id="workouts">
       <div className="workout-header">
-        <h2>Weekly Workout Plan</h2>
-        <p>Click on any day to see detailed exercises</p>
+        <h2>Transform Your Body</h2>
+        <p>Customized workouts for every fitness goal</p>
       </div>
 
       <div className="workout-grid">
@@ -76,12 +90,9 @@ const Workout = () => {
             key={index}
             className={`workout-card ${selectedDay === workout.day ? 'active' : ''}`}
             onClick={() => setSelectedDay(workout.day === selectedDay ? null : workout.day)}
-            style={{ 
-              backgroundImage: workout.bgImage,
-              backgroundColor: workout.color 
-            }}
           >
-            <div className="workout-content">
+            <div className="workout-image" style={{ backgroundImage: `url(${workout.image})` }} />
+            <div className="workout-content" style={{ backgroundColor: workout.bgColor }}>
               <h3>{workout.day}</h3>
               <h4>{workout.focus}</h4>
               
