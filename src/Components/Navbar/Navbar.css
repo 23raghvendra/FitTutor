@@ -107,3 +107,20 @@
   .theme-toggle:hover {
     color: var(--accent-color);
   }
+  
+  .logo-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  
+  .logo-text:hover {
+    color: var(--accent-color);
+  }

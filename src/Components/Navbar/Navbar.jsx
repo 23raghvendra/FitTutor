@@ -15,8 +15,8 @@ const Navbar = ({ theme, setTheme }) => {
     <nav className="navbar">
       {/* Left - App Name */}
       <div className="navbar-brand">
-        <Link to="/">
-          <h1>FitTutor</h1>
+        <Link to="/" className="logo-link">
+          <h1 className="logo-text">FitTutor</h1>
         </Link>
       </div>
 
@@ -28,8 +28,10 @@ const Navbar = ({ theme, setTheme }) => {
         <li className={location.pathname === '/workout' ? 'active' : ''}>
           <Link to="/workout">Workout</Link>
         </li>
+        <li className={location.pathname.includes('/progress') ? 'active' : ''}>
+          <Link to="/progress">Progress</Link>
+        </li>
         <li><Link to="/dieting">Dieting</Link></li>
-        <li><Link to="/progress">Progress</Link></li>
         <li><Link to="/profile">Profile</Link></li>
       </ul>
 
