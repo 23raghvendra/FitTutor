@@ -31,7 +31,21 @@
     transition: color 0.3s ease;
   }
   
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  .nav-links li.active a {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+  
   .nav-links li:hover {
+    color: var(--accent-color);
+  }
+  
+  .nav-links li a:hover {
     color: var(--accent-color);
   }
   
