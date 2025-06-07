@@ -43,17 +43,41 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
+/* Responsive styles */
+@media (max-width: 1024px) {
   .progress-container {
-    padding: 1rem;
+    padding: 1.5rem;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .progress-title {
+    font-size: 2rem;
+  }
+
   .progress-tabs {
     gap: 0.5rem;
   }
-  
+
   .tab-button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+
+  .progress-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .progress-container {
+    padding: 1rem;
   }
 }

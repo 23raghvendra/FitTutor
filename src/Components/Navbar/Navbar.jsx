@@ -13,14 +13,14 @@ const Navbar = ({ theme, setTheme }) => {
 
   return (
     <nav className="navbar">
-      {/* Left - App Name */}
+      {}
       <div className="navbar-brand">
         <Link to="/" className="logo-link">
           <h1 className="logo-text">FitTutor</h1>
         </Link>
       </div>
 
-      {/* Middle - Navigation Links */}
+      {}
       <ul className="nav-links">
         <li className={location.pathname === '/' ? 'active' : ''}>
           <Link to="/">Home</Link>
@@ -35,7 +35,7 @@ const Navbar = ({ theme, setTheme }) => {
         <li><Link to="/profile">Profile</Link></li>
       </ul>
 
-      {/* Right - Search and Theme Toggle */}
+      {}
       <div className="nav-actions">
         <div className="search-box">
           <input
