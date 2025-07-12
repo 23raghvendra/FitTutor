@@ -13,14 +13,12 @@ const Navbar = ({ theme, setTheme }) => {
 
   return (
     <nav className="navbar">
-      {}
       <div className="navbar-brand">
         <Link to="/" className="logo-link">
           <h1 className="logo-text">FitTutor</h1>
         </Link>
       </div>
 
-      {}
       <ul className="nav-links">
         <li className={location.pathname === '/' ? 'active' : ''}>
           <Link to="/">Home</Link>
@@ -28,14 +26,10 @@ const Navbar = ({ theme, setTheme }) => {
         <li className={location.pathname === '/workout' ? 'active' : ''}>
           <Link to="/workout">Workout</Link>
         </li>
-        <li className={location.pathname.includes('/progress') ? 'active' : ''}>
-          <Link to="/progress">Progress</Link>
-        </li>
         <li><Link to="/dieting">Dieting</Link></li>
         <li><Link to="/profile">Profile</Link></li>
       </ul>
 
-      {}
       <div className="nav-actions">
         <div className="search-box">
           <input

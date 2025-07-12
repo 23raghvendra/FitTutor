@@ -1,0 +1,337 @@
+.workout-section {
+  position: relative;
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, rgba(23, 23, 23, 0.95), rgba(41, 41, 41, 0.9)), url('../../assets/1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.workout-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.workout-header {
+  position: relative;
+  padding-top: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.workout-header h2 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.header-accent {
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff5733, #ff9900);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255, 87, 51, 0.5);
+}
+
+.workout-benefits {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  position: relative;
+}
+
+.benefit-item {
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+  flex: 1;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff5733;
+  text-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
+}
+
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.workout-grid.animate .workout-card {
+  animation: cardFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workout-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  min-height: 380px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transform: translateY(0);
+  margin-bottom: 10px;
+}
+
+.workout-card.animate {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.workout-card.animate-end {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workout-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+}
+
+.workout-card:hover .workout-image {
+  transform: scale(1.1);
+}
+
+.workout-content {
+  position: relative;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  transition: opacity 0.5s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.workout-card:hover .workout-content {
+  opacity: 0.9;
+}
+
+.workout-day-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.workout-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.workout-duration {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.intensity-meter {
+  display: flex;
+}
+
+.intensity-label {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.intensity-dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.intensity-dot.active {
+  background-color: var(--accent-color);
+}
+
+.workout-details {
+  margin-top: 1rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.workout-details.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.workout-description {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.workout-exercises ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.workout-exercises li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.workout-benefits-list {
+  margin-top: 1rem;
+}
+
+.benefits-tags {
+  margin-top: 0.5rem;
+}
+
+.benefit-tag {
+  font-size: 0.8rem;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 0.2rem 0.2rem 0 0;
+}
+
+.workout-trainer {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+.workout-cta {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-class-btn, .view-details-btn, .join-now-btn {
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.book-class-btn:hover, .view-details-btn:hover {
+  background-color: var(--accent-color-dark);
+}
+
+.join-now-btn {
+  background-color: var(--accent-color);
+  display: block;
+  margin: 1.5rem auto;
+}
+
+.join-now-btn:hover {
+  background-color: var(--accent-color-dark);
+}
+
+.workout-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.workout-motivation h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.workout-motivation p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .workout-benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-item {
+    margin-bottom: 1rem;
+  }
+
+  .workout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workout-cta {
+    flex-direction: column;
+  }
+
+  .book-class-btn, .view-details-btn, .join-now-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .workout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workout-header h2 {
+    font-size: 2rem;
+  }
+}

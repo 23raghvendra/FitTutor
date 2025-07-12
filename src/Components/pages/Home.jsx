@@ -1,19 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import image from '../assets/homepage.jpg';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
+  const handleViewPrograms = () => {
+    navigate('/workout');
+  };
+  
   return (
     <div className="main-container">
       <div className="hero-container" style={{ 
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url('/homepage.jpg')`,
       }}>
         <div className="hero-content">
           <h1>Transform Your Body,<br />Transform Your Life</h1>
           <p>Experience personalized fitness coaching and achieve your goals with our expert trainers</p>
           <div className="hero-buttons">
             <button className="primary-btn">Start Free Trial</button>
-            <button className="secondary-btn">View Programs</button>
+            <button className="secondary-btn" onClick={handleViewPrograms}>View Programs</button>
           </div>
         </div>
       </div>
@@ -41,5 +47,6 @@ const Hero = () => {
     </div>
   );
 };
+
 
 export default Hero;
