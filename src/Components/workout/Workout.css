@@ -146,10 +146,22 @@
   justify-content: flex-end;
   padding: 1.5rem;
   text-align: left;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.workout-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
 }
 
 .workout-card:hover .workout-content {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .workout-day-badge {
@@ -163,6 +175,7 @@
   color: white;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.5px;
+  z-index: 3;
 }
 
 .workout-meta {

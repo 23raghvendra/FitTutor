@@ -26,8 +26,12 @@ const Navbar = ({ theme, setTheme }) => {
         <li className={location.pathname === '/workout' ? 'active' : ''}>
           <Link to="/workout">Workout</Link>
         </li>
-        <li><Link to="/dieting">Dieting</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
+        <li className={location.pathname === '/progress' ? 'active' : ''}>
+          <Link to="/progress">Progress</Link>
+        </li>
+        <li className={location.pathname === '/profile' ? 'active' : ''}>
+          <Link to="/profile">Profile</Link>
+        </li>
       </ul>
 
       <div className="nav-actions">

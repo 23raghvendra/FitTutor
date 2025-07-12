@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/pages/Home';
+import Hero from './Components/Pages/Home';
 import Footer from './Components/Footer/footer';
 import Workout from './Components/workout/Workout';
-
+import Progress from './Components/Progress/Progress';
+import Profile from './Components/profile/Profile';
 
 
 
@@ -23,6 +24,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/workout" element={<Workout />} />
+            <Route path="/progress" element={<Progress />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
         <Footer />

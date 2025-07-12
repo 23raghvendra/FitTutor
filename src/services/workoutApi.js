@@ -1,5 +1,3 @@
-// Workout API Service
-// This service manages workout data, progress tracking, and persistence using localStorage
 
 class WorkoutAPI {
   constructor() {
@@ -7,7 +5,6 @@ class WorkoutAPI {
     this.initializeData();
   }
 
-  // Initialize default data structure
   initializeData() {
     const existingData = localStorage.getItem(this.storageKey);
     if (!existingData) {
